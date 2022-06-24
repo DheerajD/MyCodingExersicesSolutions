@@ -1,0 +1,6 @@
+We have multiple producers of data. We want to treat this data as batch to hopefully get an increased performance compared to treating the data objects one by one.
+
+Example: Integers come in through HTTP POST requests to /addInteger one by one. We want the running sum of all integers since the service start. We do not want this sum to be increased for each requests, but rather in batch.
+
+Exersice: Propose a high level software design for this service. Outline the pkg level structure and the API for the batching logic. Implement the class doing batching. The class should offer a way to feed integers into the batch. Batch size should be configurable. When batch is processed, we expect the integers from the batch to be added together and an external API to be called with the the resulting sum.
+
